@@ -20,6 +20,8 @@ var botones = document.querySelector(".div-botones");
 var area = document.querySelector(".text-area");
 //capturamos el p del texto encriptado
 var fraseCodi = document.getElementById("fraseCodi");
+//capturamos el p del texto encriptado
+var textoEncriptar = document.getElementById("Texto");
 //funcion para mostrar el btn copiar, el p del texto encriptado
 //y ajustar la posición de los botones
 function ajustar() {
@@ -38,7 +40,7 @@ function ajustar() {
 function valido() {
     error.style.color = '#28b423'
     error.style.rotate = "-360deg";
-    advetencia.style.top = "33em";
+    advetencia.style.top = "32.5em";
     error.style.fontSize = "1em";
     error.style.fontWeight = "0";
 }
@@ -48,8 +50,8 @@ function valido() {
 function invalido() {
     error.style.color = '#e42630';
     error.style.rotate = "360deg";
-    advetencia.style.top = "32em";
-    error.style.fontSize = "1.7em";
+    advetencia.style.top = "32.5em";
+    error.style.fontSize = "1.5em";
     error.style.fontWeight = "400";
 }
 //funcion para dar formato al texto 
@@ -58,23 +60,25 @@ function textoError() {
     let texto = document.getElementById("Texto").value;
     //Si es vacío muestra el mensaje
     if (!texto) {
-        fraseCodi.innerHTML = "Debe ingresar al menos un caracter!";
+        fraseCodi.value = "Debe ingresar al menos un caracter!";
         fraseCodi.style.color = "#e42630";
-        fraseCodi.style.fontSize = "1.5em";
+        fraseCodi.style.fontSize = "1.4em";
+        textoEncriptar.focus();
     } else {
         //Sino es vacío muestra el mensaje
-        fraseCodi.innerHTML = "Error!";
+        fraseCodi.value = "Error!";
         fraseCodi.style.color = "#e42630";
-        fraseCodi.style.fontSize = "1.5em";
+        fraseCodi.style.fontSize = "1.4em";
+        textoEncriptar.focus();
     }
     return fraseCodi
 }
 // La siguiente función valida el elemento textArea #Texto
-function validar() {
+function validar(inputValidar) {
     // Variable que usaremos para determinar si el #Texto es valido
     let isValid = false;
     // El input que queremos validar
-    let texto = document.getElementById("Texto").value;
+    let texto = inputValidar.value;
     // El pattern que vamos a comprobar
     const pattern = new RegExp("^[a-z\\s\\n\\ñ]+$");
     // Primera validación, si #Texto esta vacío entonces no es valido
@@ -101,11 +105,11 @@ function validar() {
 }
 function mostrarEncriptado() {
     //capturamos el valor del textArea #Texto
-    let texto = document.getElementById("Texto").value;
+    let texto = textoEncriptar.value;
     //ajustamos los botones
     ajustar();
     //llamamos al validar()
-    const valido = validar();
+    const valido = validar(textoEncriptar);
     //Si validar() = false muestra el mensaje de error
     if (!valido) {
         textoError();
@@ -114,6 +118,8 @@ function mostrarEncriptado() {
         let textoEncriptado = [];
         //Si el #Texto contiene datos 
         if (texto.length) {
+            //regresa el color inicial
+            fraseCodi.style.color = "#495057";
             for (let i = 0; i < texto.length; i++) {
                 //creamos una variable para almacenar el codigo
                 let codigo;
@@ -138,41 +144,63 @@ function mostrarEncriptado() {
                 }
                 //enviamos los caracteres al arreglo
                 textoEncriptado.push(codigo)
-                //le damos color texto encriptado
-                fraseCodi.style.color = "#495057";
                 //enviamos el array al fraseCodi como un String
-                fraseCodi.innerHTML = textoEncriptado.join("");
+                fraseCodi.value = textoEncriptado.join("");
             }
         }
     }
     //borramos el texto del textArea
-    document.getElementById("Texto").value = "";
+    textoEncriptar.value = "";
 }
 //funcion para desencriptar el texto del fraseCodi
 function mostrarDesencriptar() {
     //capturamos el valor del fraseCodi
-    let textoEncrip = document.getElementById("fraseCodi").innerHTML;
-    //reemplazamos según la cadena encontrada. 
-    let textoDesEncrip = textoEncrip.replace(/enter/gi, "e").replace(/imes/gi, "i")
-    .replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u");
-    //enviamos el string desencriptado al fraseCodi
-    document.getElementById("fraseCodi").innerHTML = textoDesEncrip;
+    let textoEncrip = fraseCodi.value;
+    //ajustamos los botones
+    ajustar();
+    //llamamos al validar()
+    const valido = validar(fraseCodi);
+    //Si validar() = false muestra el mensaje de error
+    if (!valido) {
+        textoError();
+    } else {
+        //creamos un arreglo para almacenar el #Texto
+        let textoEncriptado = [];
+        //Si el #Texto contiene datos 
+        if (textoEncrip.length) {
+            //regresa el color inicial
+            fraseCodi.style.color = "#495057";
+            //reemplazamos según la cadena encontrada. 
+            let textoDesEncrip = textoEncrip.replace(/enter/gi, "e").replace(/imes/gi, "i")
+                .replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u");
+            //enviamos el string desencriptado al fraseCodi
+            fraseCodi.value = textoDesEncrip;
+        }
+    }
 }
 //funcion para copiar el texto
 function copiarTexto() {
-    //capturamos el fraseCodi
-    let texto = document.getElementById("fraseCodi");
-    //creamos un rango de selección
-    var seleccion = document.createRange();
-    //Se añade el texto a la selección el elemento
-    seleccion.selectNodeContents(texto);
-    //Se deselecciona cualquier cosa que estuviese 
-    //previamente seleccionada en la página
+    debugger;
+    //removemos todos las posibles selecciones de la pagina
     window.getSelection().removeAllRanges();
-    //Se realiza la selección del contenido
-    window.getSelection().addRange(seleccion);
-    //Se lanza el comando de copiado
+    //seleccionamos la frase codificada
+    fraseCodi.select();
+    //ejecutamos el comando para copiar un texto
     var res = document.execCommand('copy');
+    //si res == true (document.execCommand('copy') regresa un boolean) 
+    //se aplica el cambio de estilos, si es false es porque el comando
+    //falló
+    if (res) {
+        copiar.style.borderColor = '#28b423';
+        copiar.style.boxShadow = '3px 3px 3px  #088c19';
+        copiar.style.transform = 'scale(0.95)';
+        alert("Texto copiado");
+    }
+}
+//funcion para regresar la funcion a su formato inicial
+function resetFraseCodi() {
+    fraseCodi.value = ""
+    fraseCodi.style.color = "#495057";
 }
 //capturamos el evento onclick para mostrar la funcion
 //mostrarEncriptado() cuando se haga click
@@ -181,5 +209,6 @@ encriptar.onclick = mostrarEncriptado;
 //mostrarDesencriptado() cuando se haga click
 desencriptar.onclick = mostrarDesencriptar;
 //capturamos el evento onclick para mostrar la funcion
+fraseCodi.onclick = resetFraseCodi;
 //copiarTexto() cuando se haga click
 copiar.onclick = copiarTexto;

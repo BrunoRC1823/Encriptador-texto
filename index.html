@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/style-reset.css">
+    <link rel="stylesheet" href="/style-index.css">
     <title>Encriptador de texto</title>
 </head>
 <body>
     <div class="logo">
         <img class="img-logo" src="/Imagenes/Logo@2x.png">
     </div>
-    <textarea class="tit-prin" id="Texto" placeholder="Ingrese el texto aquí"></textarea>
+    <textarea cols="5" rows="7" class="tit-prin" id="Texto" placeholder="Ingrese el texto aquí"></textarea>
     <div class="div-advetencia">
         <img class="warning" id="idwarning" src="/Imagenes/bi_exclamation-circle-fill.png">
         <p class="p-forma" id="iderror">Solo letras minúsculas y sin acentos</p>
@@ -24,8 +25,8 @@
             <p class="p-desencriptar">Desencriptar</p>
         </button>
     </div>
-    <div class="text-area">
-        <p class="frase-codificada" id="fraseCodi"></p>
+    <div class="text-area" name="ga">
+        <textarea cols="5" rows="13" class="frase-codificada" id="fraseCodi" name="ra"></textarea>
         <img src="/Imagenes/Muñeco.png" alt="" class="muneco">
         <div class="descr-area">
             <p class="p-descr-area-tit">Ningún mensaje fue encontrado</p>
