@@ -29,10 +29,6 @@ function ajustar() {
     copiar.style.display = "flex";
     muneco.style.display = "none";
     descr.style.display = "none";
-    advetencia.style.top = "33em";
-    botones.style.top = "35em";
-    area.style.height = "600px";
-    copiar.style.top = "38em";
 }
 //funcion para dar formato y animación al 
 //p donde se muestra el formato que se debe ingresar
@@ -40,7 +36,6 @@ function ajustar() {
 function valido() {
     error.style.color = '#28b423'
     error.style.rotate = "-360deg";
-    advetencia.style.top = "32.5em";
     error.style.fontSize = "1em";
     error.style.fontWeight = "0";
 }
@@ -50,7 +45,6 @@ function valido() {
 function invalido() {
     error.style.color = '#e42630';
     error.style.rotate = "360deg";
-    advetencia.style.top = "32.5em";
     error.style.fontSize = "1.5em";
     error.style.fontWeight = "400";
 }
@@ -180,7 +174,6 @@ function mostrarDesencriptar() {
 }
 //funcion para copiar el texto
 function copiarTexto() {
-    debugger;
     //removemos todos las posibles selecciones de la pagina
     window.getSelection().removeAllRanges();
     //seleccionamos la frase codificada

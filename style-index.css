@@ -1,9 +1,9 @@
 body {
     position: relative;
     width: auto;
-    height: 1024px;
+    height: 524px;
     min-width: 650px;
-    background: #F3F5FC;
+    background: #f3f5fc;
 }
 
 .logo {
@@ -35,19 +35,19 @@ body {
     min-height: 350px;
     left: 20%;
     top: 4em;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 2em;
     line-height: 150%;
-    background: #F3F5FC;
+    background: #f3f5fc;
     border: 0;
     outline: none;
-    color: #0A3871;
+    color: #0a3871;
 }
 
 .tit-prin::placeholder {
-    color: #0A3871;
+    color: #0a3871;
 }
 
 .div-advetencia {
@@ -60,7 +60,7 @@ body {
     width: 45%;
     height: 18px;
     left: 12%;
-    top: 53em;
+    top: 32em;
 }
 
 .warning {
@@ -71,7 +71,7 @@ body {
 }
 
 .p-forma {
-    font-family: 'Inter';
+    font-family: "Inter";
     width: 100%;
     font-style: normal;
     font-weight: 400;
@@ -94,7 +94,7 @@ body {
     width: 50%;
     height: 67px;
     left: 10%;
-    top: 55em;
+    top: 34em;
     transition: 0.5s all;
 }
 
@@ -106,7 +106,7 @@ body {
     gap: 8px;
     width: 50%;
     height: 67px;
-    background: #0A3871;
+    background: #0a3871;
     border-radius: 24px;
     border: 1px solid #000000;
     flex: none;
@@ -126,12 +126,12 @@ body {
 }
 
 .p-encriptar {
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 1.5em;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     flex: none;
     order: 0;
     flex-grow: 1;
@@ -151,8 +151,8 @@ body {
     gap: 8px;
     width: 50%;
     height: 67px;
-    background: #D8DFE8;
-    border: 1px solid #0A3871;
+    background: #d8dfe8;
+    border: 1px solid #0a3871;
     border-radius: 24px;
     flex: none;
     order: 1;
@@ -172,12 +172,12 @@ body {
 }
 
 .p-desencriptar {
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 1.5em;
     text-align: center;
-    color: #0A3871;
+    color: #0a3871;
     flex: none;
     order: 0;
     flex-grow: 1;
@@ -191,10 +191,10 @@ body {
 .text-area {
     position: absolute;
     width: 25%;
-    height: 944px;
+    height: 110%;
     left: 70%;
     margin-bottom: 50px;
-    background: #FFFFFF;
+    background: #ffffff;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
     top: 40px;
@@ -210,7 +210,7 @@ body {
     min-height: 464px;
     left: 10%;
     top: 10px;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 1.7em;
@@ -224,9 +224,9 @@ body {
 .muneco {
     position: absolute;
     width: 80%;
-    height: 304px;
+    height: 40%;
     left: 10%;
-    top: 283px;
+    top: 5em;
 }
 
 .descr-area {
@@ -236,19 +236,19 @@ body {
     padding: 0px;
     position: absolute;
     width: 100%;
-    height: 300px;
-    top: 619px;
+    height: 9em;
+    top: 22em;
 }
 
 .p-descr-area-tit {
     width: 70%;
     height: auto;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 700;
     font-size: 1.5em;
     text-align: center;
-    color: #343A40;
+    color: #343a40;
     flex: none;
     flex-grow: 0;
     margin: 0 15% 5%;
@@ -257,7 +257,7 @@ body {
 .p-descr-area-descr {
     width: 80%;
     height: auto;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 1.1em;
@@ -279,8 +279,8 @@ body {
     width: 80%;
     height: 67px;
     left: 10%;
-    top: 830px;
-    border: 1px solid #0A3871;
+    top: 37em;
+    border: 1px solid #0a3871;
     border-radius: 24px;
     transition: 0.1s;
 }
@@ -299,11 +299,11 @@ body {
 
 .p-copiar {
     height: 1.1em;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 1.5em;
-    color: #0A3871;
+    color: #0a3871;
     text-align: center;
     flex: none;
     order: 0;
