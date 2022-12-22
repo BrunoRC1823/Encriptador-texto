@@ -2,7 +2,7 @@ body {
     position: relative;
     width: auto;
     height: 524px;
-    min-width: 650px;
+    min-width: 375px;
     background: #f3f5fc;
 }
 
@@ -310,6 +310,6 @@ body {
     flex-grow: 1;
 }
 
-.copiar:active {
+.p-copiar:active {
     transform: scale(0.95);
 }

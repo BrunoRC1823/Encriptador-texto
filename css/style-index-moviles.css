@@ -1,7 +1,10 @@
 @media screen and (max-width: 375px) {
     .tit-prin {
-        position: absolute;
-        width: 65%;
+        max-width: 80%;
+        min-width: 80%;
+        max-height: 350px;
+        min-height: 350px;
+        width: 100%;
         height: 48px;
         left: 10%;
         top: 6em;
@@ -9,7 +12,7 @@
     }
 
     .div-advetencia {
-        width: 40%;
+        width: 90%;
         left: 5%;
         top: 50em;
     }
@@ -17,18 +20,23 @@
     .div-botones {
         flex-direction: column;
         gap: 1em;
-        width: 100%;
-        height: 67px;
-        left: 4%;
+        width: 90%;
+        height: auto;
+        left: 5%;
         top: 54em;
+    }
+    .encriptar {
+        width: 100%;
+    }
+    .desencriptar {
+        width: 100%;
     }
 
     .text-area {
         padding: 2em;
-        gap: 2em;
-        width: 35%;
+        width: 70%;
         height: 300px;
-        left: 2.5em;
+        left: 7%;
         top: 65em;
     }
 
@@ -46,9 +54,10 @@
     }
 
     .descr-area {
-        width: 100%;
+        width: 80%;
         height: 300px;
-        top: 3em;
+        top: 6em;
+        gap: 1em;
     }
 
     .p-descr-area-tit {
@@ -60,7 +69,6 @@
     }
 
     .copiar {
-        box-sizing: border-box;
         width: 80%;
         height: 67px;
         left: 10%;
