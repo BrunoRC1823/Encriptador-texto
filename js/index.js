@@ -174,20 +174,24 @@ function mostrarDesencriptar() {
 }
 //funcion para copiar el texto
 function copiarTexto() {
-    //removemos todos las posibles selecciones de la pagina
-    window.getSelection().removeAllRanges();
-    //seleccionamos la frase codificada
-    fraseCodi.select();
-    //ejecutamos el comando para copiar un texto
-    var res = document.execCommand('copy');
-    //si res == true (document.execCommand('copy') regresa un boolean) 
-    //se aplica el cambio de estilos, si es false es porque el comando
-    //falló
-    if (res) {
-        copiar.style.borderColor = '#28b423';
-        copiar.style.boxShadow = '3px 3px 3px  #088c19';
-        copiar.style.transform = 'scale(0.95)';
-        alert("Texto copiado");
+    if (fraseCodi.value == "") {
+        alert("No hay nada que copiar!")
+    } else {
+        //removemos todos las posibles selecciones de la pagina
+        window.getSelection().removeAllRanges();
+        //seleccionamos la frase codificada
+        fraseCodi.select();
+        //ejecutamos el comando para copiar un texto
+        var res = document.execCommand('copy');
+        //si res == true (document.execCommand('copy') regresa un boolean) 
+        //se aplica el cambio de estilos, si es false es porque el comando
+        //falló
+        if (res) {
+            copiar.style.borderColor = '#28b423';
+            copiar.style.boxShadow = '3px 3px 3px  #088c19';
+            copiar.style.transform = 'scale(0.95)';
+            alert("Texto copiado");
+        }
     }
 }
 //funcion para regresar la funcion a su formato inicial
