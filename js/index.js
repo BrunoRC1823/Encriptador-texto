@@ -51,7 +51,7 @@ function invalido() {
 //funcion para dar formato al texto 
 //del p donde se muestra el codigo encriptado
 function textoError() {
-    let texto = document.getElementById("Texto").value;
+    let texto = textoEncriptar.value;
     //Si es vacío muestra el mensaje
     if (!texto) {
         fraseCodi.value = "Debe ingresar al menos un caracter!";
@@ -145,21 +145,21 @@ function mostrarEncriptado() {
     }
     //borramos el texto del textArea
     textoEncriptar.value = "";
+    //reseteamos el botón copiar
+    resetCopiar();
 }
 //funcion para desencriptar el texto del fraseCodi
 function mostrarDesencriptar() {
     //capturamos el valor del fraseCodi
-    let textoEncrip = fraseCodi.value;
+    let textoEncrip = textoEncriptar.value;
     //ajustamos los botones
     ajustar();
     //llamamos al validar()
-    const valido = validar(fraseCodi);
+    const valido = validar(textoEncriptar);
     //Si validar() = false muestra el mensaje de error
     if (!valido) {
         textoError();
     } else {
-        //creamos un arreglo para almacenar el #Texto
-        let textoEncriptado = [];
         //Si el #Texto contiene datos 
         if (textoEncrip.length) {
             //regresa el color inicial
@@ -171,6 +171,10 @@ function mostrarDesencriptar() {
             fraseCodi.value = textoDesEncrip;
         }
     }
+    //borramos el texto del textArea
+    textoEncriptar.value = "";
+    //reseteamos el botón copiar
+    resetCopiar();
 }
 //funcion para copiar el texto
 function copiarTexto() {
@@ -195,9 +199,10 @@ function copiarTexto() {
     }
 }
 //funcion para regresar la funcion a su formato inicial
-function resetFraseCodi() {
-    fraseCodi.value = ""
-    fraseCodi.style.color = "#495057";
+function resetCopiar() {
+    copiar.style.borderColor = '#0a3871';
+    copiar.style.boxShadow = 'none';
+    copiar.style.transform = 'scale(1)';
 }
 //capturamos el evento onclick para mostrar la funcion
 //mostrarEncriptado() cuando se haga click
@@ -205,7 +210,5 @@ encriptar.onclick = mostrarEncriptado;
 //capturamos el evento onclick para mostrar la funcion
 //mostrarDesencriptado() cuando se haga click
 desencriptar.onclick = mostrarDesencriptar;
-//capturamos el evento onclick para mostrar la funcion
-fraseCodi.onclick = resetFraseCodi;
 //copiarTexto() cuando se haga click
 copiar.onclick = copiarTexto;
