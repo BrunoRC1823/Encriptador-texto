@@ -10,12 +10,6 @@
     }
 
     .div-advetencia {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 0px;
-        gap: 8px;
-        position: absolute;
         width: 60%;
         height: 18px;
         left: 5%;
@@ -23,31 +17,22 @@
     }
 
     .div-botones {
-        display: flex;
         flex-direction: row;
-        align-items: flex-start;
-        padding: 0px;
         gap: 2em;
-        position: absolute;
         width: 90%;
         height: 67px;
         left: 3%;
         top: 52em;
-        transition: 0.5s all;
     }
 
     .text-area {
         padding: 2em;
         gap: 2em;
-        position: absolute;
         width: 81%;
         height: 270px;
         margin-bottom: 3em;
         left: 2.5em;
         top: 59em;
-        background: #FFFFFF;
-        box-shadow: 0px 24px 32px -8px rgb(0 0 0 / 8%);
-        border-radius: 32px;
     }
 
     .frase-codificada {
@@ -64,12 +49,8 @@
     }
 
     .descr-area {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        position: relative;
-        width: 100%;
+        width: 90%;
+        padding: 0;
         height: 300px;
         top: 3em;
     }
@@ -81,21 +62,12 @@
     .p-descr-area-descr {
         font-size: 1.5em;
     }
+}
 
-    .copiar {
-        box-sizing: border-box;
-        display: none;
-        flex-direction: row;
-        align-items: flex-start;
-        padding: 20px;
-        gap: 8px;
-        position: absolute;
-        width: 80%;
-        height: 67px;
-        left: 10%;
-        top: 19em;
-        border: 1px solid #0a3871;
-        border-radius: 24px;
-        transition: 0.1s;
-    }
+.copiar {
+    box-sizing: border-box;
+    width: 80%;
+    height: 67px;
+    left: 10%;
+    top: 19em;
 }
